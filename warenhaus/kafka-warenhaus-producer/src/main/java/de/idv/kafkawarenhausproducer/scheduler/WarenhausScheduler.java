@@ -9,8 +9,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-
 import de.idv.kafkawarenhausproducer.entity.Ware;
 import de.idv.kafkawarenhausproducer.producer.WarenhausProducer;
 
@@ -28,11 +26,9 @@ public class WarenhausScheduler {
 		}).getBody();
 		
 		waren.forEach(c -> {
-			try {
-				producer.sendMessage(c);
-			} catch (JsonProcessingException e) {
-				e.printStackTrace();
-			}
+			
+				// TODO versende ueber den Producer Waren
+			
 		});
 	}
 	
