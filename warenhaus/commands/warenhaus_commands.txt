@@ -1,3 +1,5 @@
+# verbine dich mit kafka
+docker exec -it kafka bash
 
 # create topic t_hello
 kafka-topics.sh --bootstrap-server localhost:9092 --create --topic t_warenhaus --partitions 1 --replication-factor 1
